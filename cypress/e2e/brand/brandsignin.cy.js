@@ -13,20 +13,6 @@ describe('admin signin page', () => {
     cy.url().should('eq', 'https://dev-app.pickmyad.com/brand/campaigns')
     //To check browser title
     cy.title().should('eq', 'Campaigns | PickMyAd')
-    //To check side nav bar present or not
-    
-  //   cy.get('.platform-top')
-  // .contains('Settings').should('be.visible')
-  //.contains('Campaigns').should('be.visible')
-  //.contains('Settings').should('be.visible');
-
-  cy.get('.platform-top')
-  .find(':nth-child(1)') // Replace 'a' with the appropriate selector for the elements in your side navigation bar
-  .filter(':contains("Dashboard"), :contains("Campaigns"), :contains("Settings")')
-  .should('be.visible');
-
-    cy.get('.platform-logout')
-    //cy.xpath('//div[contains(text(),"Campaigns")]').should('be.visible')
     //To test Pickmyad logo
     cy.get('.logo-side > img')
       .should('be.visible')
@@ -37,8 +23,15 @@ describe('admin signin page', () => {
     cy.get('body')
       .should('have.css', 'font-family')
       .and('contain', 'Figtree, sans-serif');
+    //To check side nav bar present or not
+    //To test side nav options
+    cy.get('.platform-top')
+      .find(':nth-child(1)')
+      .filter(':contains("Dashboard"), :contains("Campaigns"), :contains("Settings")')
+      .should('be.visible');
 
-
+    cy.get('.platform-logout')
+    //cy.xpath('//div[contains(text(),"Campaigns")]').should('be.visible')
 
   })
 })
