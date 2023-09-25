@@ -41,7 +41,7 @@ describe('Brand signup', () => {
         cy.get('.onboard-scroll').click()
         cy.get('.mat-chip').should('be.visible')
 
-        // Assuming the app-language component is step 1, and app-category is step 2
+        // language component is step 1, and app-category is step 2
         cy.get('.stepper-body cdk-step').should('have.length', 2);
 
         //should navigate back to the language step using the "Back" button'
