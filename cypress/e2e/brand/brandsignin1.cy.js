@@ -1,6 +1,6 @@
 describe('admin signin page', () => {
   it('Launch URL', () => {
-    cy.visit('dev-app.pickmyad.com/auth')
+    cy.visit('http://localhost:7070/brand/signin')
     cy.get('#mat-select-value-1').click()
     cy.xpath('//span[normalize-space()="Brand"]').click()
     cy.wait(2000)
@@ -10,7 +10,7 @@ describe('admin signin page', () => {
     cy.xpath('//p[@class="ng-star-inserted"]').click()
 
     //To check new url
-    cy.url().should('eq', 'https://dev-app.pickmyad.com/brand/campaigns')
+    cy.url().should('eq', 'http://localhost:7070/brand/campaigns')
     //To check browser title
     cy.title().should('eq', 'Campaigns | PickMyAd')
     //To check side nav bar present or not

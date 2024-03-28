@@ -7,7 +7,7 @@ describe('Signin Page', () => {
 
         // cy.viewport(375, 667); // Sets the viewport size to an iPhone 6/7/8 resolution
 
-        cy.visit('https://dev-app.pickmyad.com/auth')
+        cy.visit('http://localhost:7070/brand/signin')
         cy.get('#mat-select-value-1').click()
         cy.xpath('//span[normalize-space()="Brand"]').click()
         cy.wait(2000)
