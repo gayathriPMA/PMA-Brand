@@ -33,3 +33,14 @@ Cypress.on('uncaught:exception', (err) => {
         return false
     }
 })
+Cypress.Commands.add('login', () => {
+    cy.visit('http://localhost:7070/brand/signin');
+    cy.wait(2000);
+    cy.get('#mat-input-0').type('9999955555');
+    cy.get('.get-otp-btn').click();
+    cy.get('#mat-input-1').type('100512');
+    cy.get('.get-otp-btn').click();
+    // Wait for the login process to complete
+    cy.url().should('eq', 'http://localhost:7070/brand/home');
+  });
+  

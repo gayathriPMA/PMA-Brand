@@ -18,6 +18,8 @@
 
 
 const { defineConfig } = require("cypress");
+
+
 //const { defineConfig } = require('cypress')
 // Populate process.env with values from .env file
 require('dotenv').config()
@@ -38,8 +40,7 @@ module.exports = defineConfig({
     "failOnStatusCode": false,
     
       "baseUrl": "https://dev-app.pickmyad.com/auth/admin/login",
-      "chromeWebSecurity": false
-    
+      "chromeWebSecurity": false,
        //"experimentalModifyObstructiveThirdPartyCode": true,
     //defaultCommandTimeout: 10000,
     //pageLoadTimeout: 100000,

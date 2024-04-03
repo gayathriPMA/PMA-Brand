@@ -37,9 +37,6 @@ describe('admin signin page', () => {
     cy.get('body')
       .should('have.css', 'font-family')
       .and('contain', 'Figtree, sans-serif');
-
-
-
   }) 
 })
 
